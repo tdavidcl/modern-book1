@@ -4,7 +4,7 @@
 \LoadClass[twoside]{book}
 
 \RequirePackage[ a5paper
-    ,hmargin={3cm,0.8in}
+    ,hmargin={2cm,0.5in}
     ,vmargin={2.5cm,2cm},
-    marginparwidth=75pt
+    marginparwidth=1.5cm
 ]{geometry}
