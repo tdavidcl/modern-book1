@@ -8,9 +8,83 @@
 \pagestyle{fancy}
 
 \usepackage[svgnames]{xcolor}
-\usepackage{titlesec}
+
+
+\usepackage[sf,bf]{titlesec}
+
 \titleformat{\section}
   {\normalfont\bfseries\Large\color{DarkRed}}{\thesection.}{1em}{}
+
+%\usepackage[Glenn]{fncychap}
+%\ChNameVar{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont} \ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont} \ChTitleVar{\Huge\bfseries\rm}, \ChRuleWidth{1pt}
+%\renewcommand{\thechapter}{\Roman{chapter}}
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+  {\filleft
+  \MakeUppercase{\chaptertitlename} 
+  \Huge\thechapter}
+  {4ex}
+  {\titlerule
+   \vspace{2ex}%
+   \filright}
+  [\vspace{2ex}%
+\titlerule\minitoc
+]
+\titlespacing{\chapter}{0pt}{-10pt}{20pt}
+
+
+
+\usepackage{xcolor}
+\definecolor{linkcolor}{rgb}{0,0,0.6} % définition de la couleur des liens pdf
+\usepackage[ pdftex,colorlinks=true,
+pdfstartview=ajustementV,
+linkcolor= linkcolor,
+citecolor= linkcolor,
+urlcolor= linkcolor,
+hyperindex=true,
+hyperfigures=false]
+{hyperref}
+
+\usepackage{minitoc}
+
+
+\usepackage{titling}
+\setlength{\droptitle}{-20\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+
+
+\usepackage{amsthm}
+
+\usepackage[framemethod=tikz]{mdframed}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[subsubsection]{Theorem}
+\newtheorem{proposition}[subsubsection]{Proposition}
+\newtheorem{lemma}[subsubsection]{Lemma}
+%\newtheorem{proof}[subsubsection]{Proof}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsubsection]{Definition}
+\newtheorem{example}[subsubsection]{Example}
+\newtheorem{exercise}[subsubsection]{Exercise}
+\newtheorem{situation}[subsubsection]{Situation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[subsubsection]{Remark}
+\newtheorem{remarks}[subsubsection]{Remarks}
+
+
+\newcommand\updatestylethm[1]{\surroundwithmdframed[outerlinewidth=0.4pt, innerlinewidth=0.4pt, middlelinewidth=1pt, middlelinecolor=white, bottomline=true,topline=false,rightline=false,roundcorner=3pt]{#1}}
+
+\updatestylethm{theorem}
+\updatestylethm{lemma}
+\updatestylethm{definition}
+
+\updatestylethm{proposition}
+
+
 
 
 
@@ -18,6 +92,9 @@
 
 
 \begin{document}
+\dominitoc% Initialization
+
+
 
 \maketitle
 \newpage
