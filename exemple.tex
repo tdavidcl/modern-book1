@@ -5,160 +5,10 @@
 \usepackage{marginnote}
 
 
-
-
-\titleformat{\section}
-  {\normalfont\bfseries\Large\color{DarkRed}}{\thesection.}{1em}{}
-
-
-
-
-
-
-\titleformat{\chapter}[display]
-{}
-{\hfill \tikz[remember picture] \node[] (nr) {\fontsize{20}{70}\selectfont\color{black}\textsc{Chapter~~} \fontsize{60}{70}\selectfont\color{black}\thechapter};
-\begin{tikzpicture}[overlay,remember picture]
-\coordinate (rightborder) at ($(nr)+(100,0)$);
-\coordinate (right) at ($(nr.east) + (0.5,0)$);
-\draw[line width=4.5em] (right) -- (rightborder);
-\end{tikzpicture}}
-{-1ex}
-{\filleft\fontsize{30}{50}\selectfont}
-[\vspace{-1ex}\minitoc]
-
-\titleformat{name=\chapter,numberless}[display]
-  {\normalfont\huge}
-  {}
-  {0pt}
-  {\titlerule\vspace{0.2cm}}
-[\vspace{0.2cm}\titlerule]
-
-\titlespacing{\chapter}{0pt}{-30pt}{-20pt}
-\titlespacing{name=\chapter,numberless}{0pt}{-30pt}{0pt}
-
-
-
-
-\usepackage{minitoc}
-
-
-\usepackage{titling}
-\setlength{\droptitle}{-20\baselineskip} % Move the title up
-
-\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
-\posttitle{\end{center}} % Article title closing formatting
-
-
-\usepackage{amsthm}
-
-\usepackage[framemethod=tikz]{mdframed}
-
-\theoremstyle{plain}
-\newtheorem{theorem}[subsubsection]{Theorem}
-\newtheorem{proposition}[subsubsection]{Proposition}
-\newtheorem{lemma}[subsubsection]{Lemma}
-%\newtheorem{proof}[subsubsection]{Proof}
-
-\theoremstyle{definition}
-\newtheorem{definition}[subsubsection]{Definition}
-\newtheorem{example}[subsubsection]{Example}
-\newtheorem{exercise}[subsubsection]{Exercise}
-\newtheorem{situation}[subsubsection]{Situation}
-
-\theoremstyle{remark}
-\newtheorem{remark}[subsubsection]{Remark}
-\newtheorem{remarks}[subsubsection]{Remarks}
-
-
-\newcommand\updatestylethm[1]{\surroundwithmdframed[outerlinewidth=0.4pt, innerlinewidth=0.4pt, middlelinewidth=1pt, middlelinecolor=white, bottomline=true,topline=false,rightline=false,roundcorner=3pt]{#1}}
-
-\updatestylethm{theorem}
-\updatestylethm{lemma}
-\updatestylethm{definition}
-
-\updatestylethm{proposition}
-
-\usepackage{tcolorbox}
-\usepackage{tikzpagenodes}
-\usetikzlibrary{ shapes.geometric }
-\usetikzlibrary{calc}
-\usepackage{anyfontsize}
-
-\title{Cca}
-\author{Timothée}
-
-
-
-
-
 \begin{document}
 \dominitoc% Initialization
-%\maketitle
 
-\pagestyle{empty}
-
-\begin{tikzpicture}[remember picture,overlay]
-%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%
-\fill[FireBrick] (current page.south west) rectangle (current page.north east);
-
-
-\foreach \i in {2.5,3,...,12}
-{
-  \node[rounded corners,FireBrick!60,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] 
-    at ($(current page.west)+(2.5,-5)$) {} ;
-}
-
-%%%%%%%%%%%%%%%%%%%% Background Polygon %%%%%%%%%%%%%%%%%%%% 
-\foreach \i in {0.5,1,...,13}
-{
-  \node[rounded corners,FireBrick!60,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] 
-    at ($(current page.north west)+(2.5,0)$) {} ;
-}
-
-\foreach \i in {0.5,1,...,13}
-{
-\node[rounded corners,FireBrick!90,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] 
-  at ($(current page.north east)+(0,-9.5)$) {} ;
-}
-
-
-\foreach \i in {4,4.5,...,12}
-{
-\node[FireBrick!85,rounded corners,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] 
-  at ($(current page.south east)+(-0.2,-0.45)$) {} ;
-}
-
-
-%%%%%%%%%%%%%%%%%%%% Title of the Report %%%%%%%%%%%%%%%%%%%% 
-\node[left,FireBrick!5,minimum width=0.625*\paperwidth,minimum height=3cm, rounded corners] 
-  at ($(current page.north east)+(0,-8.5)$)
-{
-{\fontsize{25}{30} \selectfont \bfseries The Research book}
-};
-
-%%%%%%%%%%%%%%%%%%%% Subtitle %%%%%%%%%%%%%%%%%%%% 
-\node[left,FireBrick!10,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] 
-  at ($(current page.north east)+(0,-10)$)
-{
-{\huge \textit{Fluids stuff}}
-};
-
-%%%%%%%%%%%%%%%%%%%% Author Name %%%%%%%%%%%%%%%%%%%% 
-\node[left,FireBrick!5,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] 
-  at ($(current page.north east)+(0,-12)$)
-{
-{\Large \textsc{Timothée David-\,\!-Cléris}}
-};
-
-%%%%%%%%%%%%%%%%%%%% Year %%%%%%%%%%%%%%%%%%%% 
-\node[rounded corners,fill=FireBrick!70,text =FireBrick!5,regular polygon,regular polygon sides=6, minimum size=2.5 cm,inner sep=0,ultra thick] at ($(current page.west)+(2.5,-5)$) {\LARGE \bfseries 1};
-
-\end{tikzpicture}
-
-
-
-\newpage
+\customcover{The Research book}{Concept \& proofs}{Timothée David-\,\!-Cléris}{1}
 $~$
 \vskip 3cm 
 \hskip 2cm PTDR la recherche
@@ -169,13 +19,38 @@ $~$
 \chapter{First chapter}
 
 \section{First section}
-
+\subsection{tmp}
 Testing how an equation looks like : 
 
 \[
 \forall k, \quad \frac{\partial f^{[\{N_\alpha\}]}_{k}}{\partial t} = \sum_\alpha\left\{\mathcal{H}_\alpha, f^{[\{N_\alpha\}]}_k\right\} + \sum_{\alpha\beta} \left\{\mathcal{C}_{\alpha\beta}, f^{[\{N_\alpha\}]}_{k-1}\right\}
 \]
-\lipsum
+
+Now let's do a small proof 
+
+\begin{tcdefinition}{def first}{deflabel}
+is this a definition
+\end{tcdefinition}
+
+\begin{tctheorem}{thm first}{deflabel}
+  is this a definition
+\end{tctheorem}
+
+\begin{proof}
+I was right
+
+$\begin{WithArrows}
+  A & = \bigl((a+b)+1\bigr)^2 \Arrow[jump=1]{we expand} \\
+    & = (a+b)^2 +  2(a+b) +1 \\
+    & = a^2 + 2ab + b^2 + 2a + 2b +1
+  \end{WithArrows}$
+
+\end{proof}
+
+
+\begin{marker}
+  Warning box.
+\end{marker}
 
 \footnote{\lipsum}
 
@@ -276,6 +151,7 @@ Testing how an equation looks like :
 \section{Fourth section}\lipsum
 
 
+\customcover{}{}{}{}
 
 
 \end{document}
