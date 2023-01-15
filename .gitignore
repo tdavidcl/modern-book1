@@ -7,3 +7,6 @@
 *.mtc*
 *.maf
 *.out
+*.bbl
+*.blg
+*.synctex*

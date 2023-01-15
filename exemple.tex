@@ -4,6 +4,12 @@
 
 \usepackage{marginnote}
 
+%for bib
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{chapterbib}
+
+
 
 \begin{document}
 \dominitoc% Initialization
@@ -16,63 +22,10 @@ $~$
 
 
 \part{First part}
-\chapter{First chapter}
 
-\section{First section}
-\subsection{tmp}
-Testing how an equation looks like : 
+\include{chapter-intro}
 
-\[
-\forall k, \quad \frac{\partial f^{[\{N_\alpha\}]}_{k}}{\partial t} = \sum_\alpha\left\{\mathcal{H}_\alpha, f^{[\{N_\alpha\}]}_k\right\} + \sum_{\alpha\beta} \left\{\mathcal{C}_{\alpha\beta}, f^{[\{N_\alpha\}]}_{k-1}\right\}
-\]
-
-Now let's do a small proof 
-
-\begin{tcdefinition}{def first}{deflabel}
-is this a definition
-\end{tcdefinition}
-
-\begin{tctheorem}{thm first}{deflabel}
-  is this a definition
-\end{tctheorem}
-
-
-
-\begin{proof}
-I was right
-
-$\begin{WithArrows}
-  A & = \bigl((a+b)+1\bigr)^2 \Arrow[jump=1]{we expand} \\
-    & = (a+b)^2 +  2(a+b) +1 \\
-    & = a^2 + 2ab + b^2 + 2a + 2b +1
-  \end{WithArrows}$
-
-\end{proof}
-
-
-\begin{tcproposition}{prop first}{deflabel}
-  is this a definition
-\end{tcproposition}
-
-\begin{marker}
-  Warning box.
-\end{marker}
-
-\footnote{\lipsum}
-
-\section{Second section}\lipsum
-\reversemarginpar\marginnote{
-    This is another margin note but shifted 2cm \textit{up} the page, relative to the line in which it is typeset. It is also in the left-hand margin.
-}[-2cm]
-\section{Third section}\lipsum
-\section{Fourth section}\lipsum
-
-\chapter{Second chapter}
-
-\section{First section}\lipsum
-\section{Second section}\lipsum
-\section{Third section}\lipsum
-\section{Fourth section}\lipsum
+\include{chapter-intro2}
 
 
 \chapter{Third chapter}
