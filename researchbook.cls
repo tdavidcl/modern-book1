@@ -191,6 +191,10 @@ separator sign={\ $\blacktriangleright$}}{def}
 {colback=red!5,colframe=red!35!black,fonttitle=\bfseries,
 separator sign={\ $\blacktriangleright$}}{thm}
 
+\newtcbtheorem[number within=section]{tcproposition}{Proposition}%
+{colback=black!5,colframe=black!35!black,fonttitle=\bfseries,
+separator sign={\ $\blacktriangleright$}}{prop}
+
 \newtcolorbox{marker}[1][]{enhanced,
   before skip balanced=2mm,after skip balanced=3mm,
   boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
