@@ -53,6 +53,12 @@
   {1em}
   {}
 
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\color{black}}
+  {\thesubsubsection.}
+  {1em}
+  {}
+
 
 
 \titleformat{\chapter}[display]
