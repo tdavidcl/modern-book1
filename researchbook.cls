@@ -27,7 +27,11 @@
 % to customize header & footer
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
-
+\fancyhead[RE]{\slshape\leftmark}% right even head with chapter mark
+\fancyhead[LO]{\slshape\rightmark}% left odd head with section mark
+\fancyhead[LE,RO]{}% remove left even and right odd head
+\fancyfoot[LE,RO]{}% set left even and right odd foot
+\fancyfoot[C]{\thepage}% remove centre foot
 % tikz for graphs
 \RequirePackage{tikz}
 
@@ -167,7 +171,8 @@
   
   
   \newpage
-  
+  \pagestyle{fancy}
+
   
 }
 
