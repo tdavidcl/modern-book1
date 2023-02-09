@@ -5,12 +5,18 @@
 \LoadClass[twoside]{book}
 
 %default format is a5
-\RequirePackage[ a5paper
-    ,hmargin={2cm,0.5in}
-    ,vmargin={2.5cm,2cm},
-    marginparwidth=1.5cm
-]{geometry}
+%\RequirePackage[ a5paper
+%    ,hmargin={2cm,0.5in}
+%    ,vmargin={2.5cm,2cm},
+%    marginparwidth=1.5cm
+%]{geometry}
 
+%cohen tanoudji format
+\RequirePackage[ 
+	paperwidth=167mm,
+	paperheight=247mm,
+	tmargin=21mm,lmargin=19mm,rmargin=19mm,bmargin=21mm,asymmetric
+]{geometry}
 
 
 %using xcolor with svg mode for the section color
